@@ -3,6 +3,7 @@ TODO:
 1. Shorten the code
 2. Exception handling
 3. Add graphics
+4. Add multiplayer mode
 '''
 
 import random
