@@ -30,7 +30,7 @@ This is a simple Python implementation of the classic Rock, Paper, Scissors game
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/Vikalp013/rock-paper-scissors-python.git
+    git clone https://github.com/vikalp-tyagi/rock-paper-scissors-python.git
     ```
 
 2. Navigate to the project directory:
