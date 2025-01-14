@@ -27,12 +27,17 @@ import random
 # Instructions
 def instructions():
     """Displays game instructions."""
-    print("WELCOME TO ROCK PAPER SCISSOR GAME")
-    print("\nHow To Play")
-    print(">> Enter either 'rock', 'paper', or 'scissor' as your choice")
-    print(">> Rock smashes scissor")
-    print(">> Paper covers rock")
-    print(">> Scissor cuts paper\n")
+    
+    instructions=[
+    "WELCOME TO ROCK PAPER SCISSOR GAME",
+    "\nHow To Play",
+    ">> Enter either 'rock', 'paper', or 'scissor' as your choice",
+    ">> Rock smashes scissor",
+    ">> Scissor cuts paper",
+    ]
+
+    for instruction in instructions:
+        print(instruction)
 
 # Main code
 choices = ["rock", "paper", "scissor"]
@@ -44,6 +49,7 @@ win_conditions = {
 
 def play_game():
     """Main function to play the game."""
+    
     while True:
         user_choice = input("\nEnter your choice (rock, paper, scissor): ").strip().lower()
 
