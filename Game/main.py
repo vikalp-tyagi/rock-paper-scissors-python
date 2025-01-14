@@ -25,41 +25,49 @@ Link: https://www.gnu.org/licenses/
 import random
 
 # Instructions
-print("WELCOME TO ROCK PAPER SCISSOR GAME")
-print("\nHow To Play")
-print(">> Enter either 'rock', 'paper' or 'scissor' as your choice")
-print(">> Rock smashes scissor")
-print(">> Paper covers rock")
-print(">> Scissor cuts paper")
+def instructions():
+    """Displays game instructions."""
+    print("WELCOME TO ROCK PAPER SCISSOR GAME")
+    print("\nHow To Play")
+    print(">> Enter either 'rock', 'paper', or 'scissor' as your choice")
+    print(">> Rock smashes scissor")
+    print(">> Paper covers rock")
+    print(">> Scissor cuts paper\n")
 
 # Main code
-while True:
-    a = input("\nEnter a choice : ")
-    c = ["rock", "paper", "scissor"]
-    b = random.choice(c)
-    
-    if a.lower()=="rock" or a.lower()=="paper" or a.lower()=="scissor":
-        print(f"\nYou choose {a.lower()}, computer chooses {b}...")
-        if a.lower() == b:
-            print(f"Both players selected {a}. It's a tie!")
-        elif a.lower() == "rock":
-            if b == "scissor":
-                print("Rock smashes scissor! You win!")
-            else:
-                print("Paper covers rock! You lose.")
-        elif a.lower() == "paper":
-            if b == "rock":
-                print("Paper covers rock! You win!")
-            else:
-                print("Scissor cuts paper! You lose.")
-        elif a.lower() == "scissor":
-            if b == "paper":
-                print("Scissor cuts paper! You win!")
-            else:
-                print("Rock smashes scissor! You lose.")
-    else:
-        print('\nPlease enter either \'rock\', \'paper\' or \'scissor\'')
-            
-    d = input("\nPlay again? (y/n): ")
-    if d.lower() != "y":
-        break
+choices = ["rock", "paper", "scissor"]
+win_conditions = {
+    "rock": "scissor",  # Rock beats Scissor
+    "paper": "rock",    # Paper beats Rock
+    "scissor": "paper", # Scissor beats Paper
+}
+
+def play_game():
+    """Main function to play the game."""
+    while True:
+        user_choice = input("\nEnter your choice (rock, paper, scissor): ").strip().lower()
+
+        if user_choice not in choices:
+            print("Invalid choice! Please choose from 'rock', 'paper', or 'scissor'.")
+            continue
+
+        computer_choice = random.choice(choices)
+
+        print(f"\nYou chose {user_choice}, computer chose {computer_choice}.")
+
+        if user_choice == computer_choice:
+            print("It's a tie!")
+        elif win_conditions[user_choice] == computer_choice:
+            print(f"{user_choice.capitalize()} beats {computer_choice}. You win!")
+        else:
+            print(f"{computer_choice.capitalize()} beats {user_choice}. You lose!")
+
+        play_again = input("\nPlay again? (y/n): ").strip().lower()
+        if play_again != "y":
+            print("\nThanks for playing!")
+            break
+
+# Run the game
+if __name__ == "__main__":
+    instructions()
+    play_game()
