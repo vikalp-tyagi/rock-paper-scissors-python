@@ -28,16 +28,15 @@ import random
 def instructions():
     """Displays game instructions."""
     
+    print("WELCOME TO ROCK PAPER SCISSOR GAME")
     instructions=[
-    "WELCOME TO ROCK PAPER SCISSOR GAME",
     "\nHow To Play",
     ">> Enter either 'rock', 'paper', or 'scissor' as your choice",
     ">> Rock smashes scissor",
     ">> Scissor cuts paper",
     ]
 
-    for instruction in instructions:
-        print(instruction)
+    print('/n.join(instructions)')
 
 # Main code
 choices = ["rock", "paper", "scissor"]
