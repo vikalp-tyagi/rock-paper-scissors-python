@@ -24,7 +24,7 @@ Link: https://www.gnu.org/licenses/
 
 import random
 
-# Instructions
+# INSTRUCTIONS
 def instructions():
     """Displays game instructions."""
     
@@ -38,7 +38,7 @@ def instructions():
 
     print('/n.join(instructions)')
 
-# Main code
+# MAIN
 choices = ["rock", "paper", "scissor"]
 win_conditions = {
     "rock": "scissor",  # Rock beats Scissor
@@ -72,7 +72,7 @@ def play_game():
             print("\nThanks for playing!")
             break
 
-# Run the game
+# RUN PROGRAM
 if __name__ == "__main__":
     instructions()
     play_game()
